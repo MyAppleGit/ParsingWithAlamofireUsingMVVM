@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import RxSwift
+import Alamofire
+import ObjectMapper
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +18,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+       
+//        print("sdfsdggg")
+//        
+//        Alamofire.request(Constant.photos, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization":""]).responseJSON (completionHandler: {(response) in
+//            print(response)
+//            if let result = response.result.value as? [String:Any]{
+//                print("sfsdf",result)
+//                //                let photos = Mapper<Photo>().mapArray(JSONArray: [result])
+//                //                onCompletion(photos)
+//            }
+//        })
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        
+        
+        
+        let resourcesVC = ResourcesVC()
+        let navigationController = UINavigationController(rootViewController: resourcesVC)
+        
+        window?.rootViewController = navigationController
         return true
     }
 
